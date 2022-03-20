@@ -1,0 +1,448 @@
+{
+	"id": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+	"name": "telros",
+	"description": "Test task in telros",
+	"order": [
+		"240932d3-d27b-0616-89c9-5c4638b85b77",
+		"7d411ea0-082e-519d-2b45-b20a67882552",
+		"d6eda66b-91af-0373-e153-3d7f021eba81",
+		"ada28890-4c01-e5f3-53b0-6f0d73853c60",
+		"84e1cf92-1e11-6ad4-3b70-6c2f734c9a22",
+		"2c15aece-153c-ed91-1aa8-202fcf68108a",
+		"9583103b-f96c-742e-3cab-6a63ad059bea",
+		"b6a419b8-f76d-1b37-885c-8071081eb9b6",
+		"4398b8a0-64a9-498d-f167-382e1a34c9a4",
+		"52b171bf-6c6b-f42f-815c-673eed04d8ca",
+		"efe0811e-5859-4dbc-d5cd-1b7e52ad91eb",
+		"2a3b43d5-b99a-d99f-5484-2d6a929ee9c3",
+		"f51465c0-2b00-77b3-a4c8-d08b0d843594",
+		"d54764ad-702e-af44-0803-0dcf74789f03"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1647785063567,
+	"owner": "18750414",
+	"public": false,
+	"requests": [
+		{
+			"id": "240932d3-d27b-0616-89c9-5c4638b85b77",
+			"headers": "",
+			"headerData": [],
+			"url": "",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"data": null,
+			"dataMode": "params",
+			"name": "users contact info without authorization",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1647785543335,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "2a3b43d5-b99a-d99f-5484-2d6a929ee9c3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/contact_info",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788363520,
+			"name": "user contact info copy",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "2c15aece-153c-ed91-1aa8-202fcf68108a",
+			"rawModeData": "{\n\t\"surname\": \"ivanov\",\n\t\"name\": \"ivan\",\n\t\"patronymic\": \"ivanovich\"\n}"
+		},
+		{
+			"id": "2c15aece-153c-ed91-1aa8-202fcf68108a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/contact_info",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788363520,
+			"name": "user contact info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": "{\n\t\"surname\": \"ivanov\",\n\t\"name\": \"ivan\",\n\t\"patronymic\": \"ivanovich\"\n}"
+		},
+		{
+			"id": "4398b8a0-64a9-498d-f167-382e1a34c9a4",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/detail_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788399406,
+			"name": "user detail info that already exists",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": "{\n\t\"dateOfBirth\": \"1994-11-15\",\n\t\"email\": \"ivanov@gmail.com\",\n\t\"phoneNumber\": \"89111111111\"\n}"
+		},
+		{
+			"id": "52b171bf-6c6b-f42f-815c-673eed04d8ca",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/detail_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788408079,
+			"name": "user detail info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": "{\n\t\"dateOfBirth\": \"1945-01-25\",\n\t\"email\": \"alexander@gmail.com\",\n\t\"phoneNumber\": \"49555555555\"\n}"
+		},
+		{
+			"id": "7d411ea0-082e-519d-2b45-b20a67882552",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/contact_info",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647787519551,
+			"name": "users contact info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
+		},
+		{
+			"id": "84e1cf92-1e11-6ad4-3b70-6c2f734c9a22",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/detail_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647787509876,
+			"name": "user detail info (id=1)",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
+		},
+		{
+			"id": "9583103b-f96c-742e-3cab-6a63ad059bea",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/detail_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788380423,
+			"name": "user detail info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": "{\n\t\"dateOfBirth\": \"1994-11-15\",\n\t\"email\": \"ivanov@gmail.com\",\n\t\"phoneNumber\": \"89111111111\"\n}"
+		},
+		{
+			"id": "ada28890-4c01-e5f3-53b0-6f0d73853c60",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/contact_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647787511769,
+			"name": "user contact info (id=1)",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
+		},
+		{
+			"id": "b6a419b8-f76d-1b37-885c-8071081eb9b6",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/contact_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788390369,
+			"name": "user contact info",
+			"description": "replace ivan on alexandr",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": "{\n\t\"surname\": \"Alexandrov\",\n\t\"name\": \"Alexandr\",\n\t\"patronymic\": \"Alexandrovich\"\n}"
+		},
+		{
+			"id": "d54764ad-702e-af44-0803-0dcf74789f03",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/contact_info/2",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788509155,
+			"name": "user contact info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": ""
+		},
+		{
+			"id": "d6eda66b-91af-0373-e153-3d7f021eba81",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/user/detail_info",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647787514989,
+			"name": "users detail info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
+		},
+		{
+			"id": "efe0811e-5859-4dbc-d5cd-1b7e52ad91eb",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/detail_info/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788414865,
+			"name": "user detail info",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
+		},
+		{
+			"id": "f51465c0-2b00-77b3-a4c8-d08b0d843594",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/detail_info/2",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647788424790,
+			"name": "user detail info (contactInfoId = 2)",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": [],
+			"rawModeData": "{\n\t\"dateOfBirth\": \"1994-11-15\",\n\t\"email\": \"ivanov@gmail.com\",\n\t\"phoneNumber\": \"89111111111\"\n}"
+		}
+	]
+}
