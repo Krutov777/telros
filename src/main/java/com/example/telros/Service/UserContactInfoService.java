@@ -2,17 +2,26 @@ package com.example.telros.Service;
 
 import com.example.telros.Entity.UserContactInfo;
 import com.example.telros.Repository.UserContactInfoRepo;
+import com.example.telros.Repository.UserImageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserContactInfoService {
     private final UserContactInfoRepo userContactInfoRepo;
+
+
+    @Value("${upload.path}")
+    private String uploadPath;
 
     @Autowired
     public UserContactInfoService(UserContactInfoRepo userContactInfoRepo) {
@@ -77,13 +86,16 @@ public class UserContactInfoService {
     /*
      * Удаление контактной информации пользователя
      * проверка на наличие контактной информации с переданным id
+     * Удаление фото пользователя с диска
      * */
-    public ResponseEntity<UserContactInfo> deleteUserContactInfo(Long id) {
+    public ResponseEntity<UserContactInfo> deleteUserContactInfo(Long id) throws IOException {
         Optional<UserContactInfo> row = userContactInfoRepo.findById(id);
         if (row.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         else {
+            if (!row.get().getUserImage().getFilename().equals(""))
+                Files.deleteIfExists(Paths.get(uploadPath + "/" + row.get().getUserImage().getFilename()));
             userContactInfoRepo.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }

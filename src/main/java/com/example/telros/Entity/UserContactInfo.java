@@ -1,6 +1,7 @@
 package com.example.telros.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -26,6 +27,10 @@ public class UserContactInfo {
     @JsonBackReference
     private UserDetailInfo userDetailInfo;
 
+    @OneToOne(mappedBy = "userContactInfo", cascade = CascadeType.ALL)
+    @JsonIgnore
+    private UserImage userImage;
+
     public UserContactInfo() {
     }
 
@@ -33,6 +38,14 @@ public class UserContactInfo {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
+    }
+
+    public UserImage getUserImage() {
+        return userImage;
+    }
+
+    public void setUserImage(UserImage userImage) {
+        this.userImage = userImage;
     }
 
     public Long getId() {

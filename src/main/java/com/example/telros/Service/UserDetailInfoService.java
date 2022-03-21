@@ -5,11 +5,15 @@ import com.example.telros.Entity.UserDetailInfo;
 import com.example.telros.Repository.UserContactInfoRepo;
 import com.example.telros.Repository.UserDetailInfoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,6 +23,10 @@ public class UserDetailInfoService {
     private final UserDetailInfoRepo userDetailInfoRepo;
 
     private final UserContactInfoRepo userContactInfoRepo;
+
+    @Value("${upload.path}")
+    private String uploadPath;
+
 
     @Autowired
     public UserDetailInfoService(UserDetailInfoRepo userDetailInfoRepo, UserContactInfoRepo userContactInfoRepo) {
@@ -41,6 +49,9 @@ public class UserDetailInfoService {
                         || Objects.requireNonNull(userContactInfo).getName().equals("")
         )
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+        else if (Objects.requireNonNull(userContactInfo).getName().equals(""))
+            return new ResponseEntity<>(userContactInfo, HttpStatus.NOT_FOUND);
 
         else {
             Optional<UserDetailInfo> row = userDetailInfoRepo.findByPhoneNumber(userDetailInfo.getPhoneNumber());
@@ -68,7 +79,7 @@ public class UserDetailInfoService {
 
     /*
      * Получение детальной информации пользователя
-     * проверка: на пустоту списка детальной информации
+     * проверка: на пустоту объекта с детальной информации
      * */
     public ResponseEntity<UserDetailInfo> getUserDetailInfo(Long id) {
         Optional<UserDetailInfo> row = userDetailInfoRepo.findById(id);
@@ -109,12 +120,15 @@ public class UserDetailInfoService {
     /*
      * Удаление детальной информации пользователя
      * проверка на наличие детальной информации с переданным id
+     * Удаление фото пользователя с диска, если призанно к пользователю
      * */
-    public ResponseEntity<UserDetailInfo> deleteUserDetailInfo(Long id) {
+    public ResponseEntity<UserDetailInfo> deleteUserDetailInfo(Long id) throws IOException {
         Optional<UserDetailInfo> row = userDetailInfoRepo.findById(id);
         if (row.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
+            if (!row.get().getUserContactInfo().getUserImage().getFilename().equals(""))
+                Files.deleteIfExists(Paths.get(uploadPath + "/" + row.get().getUserContactInfo().getUserImage().getFilename()));
             userDetailInfoRepo.deleteById(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }

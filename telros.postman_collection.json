@@ -16,7 +16,12 @@
 		"efe0811e-5859-4dbc-d5cd-1b7e52ad91eb",
 		"2a3b43d5-b99a-d99f-5484-2d6a929ee9c3",
 		"f51465c0-2b00-77b3-a4c8-d08b0d843594",
-		"d54764ad-702e-af44-0803-0dcf74789f03"
+		"d54764ad-702e-af44-0803-0dcf74789f03",
+		"a85152c8-5bb0-3b52-29b0-a08717772208",
+		"98a1bd31-9199-9e62-9341-dcb83790140f",
+		"e512c423-64c3-6931-819d-78f9eaec598b",
+		"3f658360-0dce-b2a1-cef9-776ef0aaf74e",
+		"9acc4b2f-5ef2-222c-e18c-c1ac59b17211"
 	],
 	"folders": [],
 	"folders_order": [],
@@ -81,11 +86,17 @@
 		},
 		{
 			"id": "2c15aece-153c-ed91-1aa8-202fcf68108a",
-			"headers": "Content-Type: application/json\n",
+			"headers": "Content-Type: application/json\nAuthorization: Basic YWRtaW46YWRtaW4=\n",
 			"headerData": [
 				{
 					"key": "Content-Type",
 					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
 					"description": "",
 					"enabled": true
 				}
@@ -102,12 +113,54 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1647788363520,
+			"time": 1647900621087,
 			"name": "user contact info",
 			"description": "",
 			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
 			"responses": [],
 			"rawModeData": "{\n\t\"surname\": \"ivanov\",\n\t\"name\": \"ivan\",\n\t\"patronymic\": \"ivanovich\"\n}"
+		},
+		{
+			"id": "3f658360-0dce-b2a1-cef9-776ef0aaf74e",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "",
+					"value": "",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/image/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [
+				{
+					"key": "file",
+					"value": "scala.jpg",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647900363594,
+			"name": "user image update",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
 		},
 		{
 			"id": "4398b8a0-64a9-498d-f167-382e1a34c9a4",
@@ -266,12 +319,108 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1647788380423,
+			"time": 1647900797377,
 			"name": "user detail info",
 			"description": "",
 			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
 			"responses": [],
 			"rawModeData": "{\n\t\"dateOfBirth\": \"1994-11-15\",\n\t\"email\": \"ivanov@gmail.com\",\n\t\"phoneNumber\": \"89111111111\"\n}"
+		},
+		{
+			"id": "98a1bd31-9199-9e62-9341-dcb83790140f",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/image/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647900114375,
+			"name": "one user image",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
+		},
+		{
+			"id": "9acc4b2f-5ef2-222c-e18c-c1ac59b17211",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:8080/api/user/image/1",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "DELETE",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"data": [
+				{
+					"key": "file",
+					"value": "",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "user image delete",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1647900409897,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "a85152c8-5bb0-3b52-29b0-a08717772208",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/image/1",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "file",
+					"value": "default-image.jpg",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1647900812862,
+			"name": "user image",
+			"description": "",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"responses": []
 		},
 		{
 			"id": "ada28890-4c01-e5f3-53b0-6f0d73853c60",
@@ -386,6 +535,36 @@
 			"description": "",
 			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
 			"responses": []
+		},
+		{
+			"id": "e512c423-64c3-6931-819d-78f9eaec598b",
+			"headers": "Authorization: Basic YWRtaW46YWRtaW4=\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic YWRtaW46YWRtaW4=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8080/api/user/image/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "ea588b67-d587-f76a-f13e-efe2d1f72eb4",
+			"data": null,
+			"dataMode": "params",
+			"name": "user image list",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1647900166125,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "efe0811e-5859-4dbc-d5cd-1b7e52ad91eb",
